@@ -20,7 +20,6 @@ function DrawerNavigator() {
      <Drawer.Screen name="About" component={AboutDetailedScreen} />
 
       <Drawer.Screen name="UMD" component={UmdScreen} />
-      {/* <Drawer.Screen name="About" component={AboutScreen} /> */}
       <Drawer.Screen name="Readings" component={ReadingsScreen} />
     </Drawer.Navigator>
   );
