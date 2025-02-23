@@ -1,3 +1,4 @@
+import AboutDetailedScreen from '../screens/AboutDetailedScreen';
 import { createDrawerNavigator } from '@react-navigation/drawer';
 import HomeScreen from '../screens/HomeScreen';
 import UmdScreen from '../screens/UmdScreen';
@@ -16,8 +17,10 @@ function DrawerNavigator() {
               title: 'UCCB Mobile'
             }}
           />
+     <Drawer.Screen name="About" component={AboutDetailedScreen} />
+
       <Drawer.Screen name="UMD" component={UmdScreen} />
-      <Drawer.Screen name="About" component={AboutScreen} />
+      {/* <Drawer.Screen name="About" component={AboutScreen} /> */}
       <Drawer.Screen name="Readings" component={ReadingsScreen} />
     </Drawer.Navigator>
   );
