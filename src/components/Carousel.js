@@ -1,31 +1,40 @@
 import React from 'react';
-import { View, Text, Dimensions, StyleSheet } from 'react-native';
-import Carousel from 'react-native-reanimated-carousel';
+import { View, Image, FlatList, Dimensions, StyleSheet } from 'react-native';
 
-const width = Dimensions.get('window').width;
+const { width } = Dimensions.get('window');
+
+const images = [
+  require('../../assets/images/carousel/umd1.jpeg'),
+  require('../../assets/images/carousel/umd2.jpeg'),
+  require('../../assets/images/carousel/umd3.jpeg'),
+  require('../../assets/images/carousel/umd2.jpeg'),
+  require('../../assets/images/carousel/umd1.jpeg')
+];
 
 const CarouselComponent = () => {
-  const data = [
-    { title: "Notification 1", text: "Advert 1" },
-    { title: "Notification 2", text: "Advert 2" },
-    { title: "Notification 3", text: "Advert 3" },
-    { title: "Notification 4", text: "Advert 4" },
-    { title: "Notification 5", text: "Advert 5" },
-  ];
+  const carouselItems = images.map((image, index) => ({
+    id: String(index),
+    image: image
+  }));
+
+  const renderItem = ({ item }) => (
+    <View style={styles.card}>
+      <Image 
+        source={item.image}
+        style={styles.image}
+      />
+    </View>
+  );
 
   return (
     <View style={styles.container}>
-      <Carousel
-        loop
-        width={width}
-        height={200}
-        data={data}
-        renderItem={({ item }) => (
-          <View style={styles.itemContainer}>
-            <Text style={styles.itemTitle}>{item.title}</Text>
-            <Text style={styles.itemText}>{item.text}</Text>
-          </View>
-        )}
+      <FlatList
+        data={carouselItems}
+        renderItem={renderItem}
+        keyExtractor={item => item.id}
+        horizontal
+        pagingEnabled
+        showsHorizontalScrollIndicator={false}
       />
     </View>
   );
@@ -33,27 +42,29 @@ const CarouselComponent = () => {
 
 const styles = StyleSheet.create({
   container: {
-    alignItems: 'center'
+    flex: 1,
+    width: width
   },
-  itemContainer: {
+  card: {
+    width: width - 40,
+    flex: 1,
+    margin: 20,
+    borderRadius: 15,
     backgroundColor: 'white',
-    borderRadius: 8,
-    padding: 20,
-    marginHorizontal: 25,
-    shadowColor: "#000",
+    shadowColor: '#000',
     shadowOffset: {
       width: 0,
-      height: 3,
+      height: 2,
     },
-    shadowOpacity: 0.29,
-    shadowRadius: 4.65,
-    elevation: 7,
+    shadowOpacity: 0.25,
+    shadowRadius: 3.84,
+    elevation: 5,
+    overflow: 'hidden'
   },
-  itemTitle: {
-    fontSize: 24
-  },
-  itemText: {
-    fontSize: 16
+  image: {
+    width: '100%',
+    height: '100%',
+    resizeMode: 'cover'
   }
 });
 
