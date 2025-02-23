@@ -1,47 +1,37 @@
 import React from 'react';
-import { View, Text, StyleSheet } from 'react-native';
+import { View, ScrollView, StyleSheet } from 'react-native';
+import { createStackNavigator } from '@react-navigation/stack';
 import CarouselComponent from '../components/Carousel';
 import AboutScreen from './AboutScreen';
+import AboutDetailedScreen from './AboutDetailedScreen';
+
+const Stack = createStackNavigator();
+
+const MainScreen = () => (
+  <ScrollView style={styles.container}>
+    <View style={styles.carouselWrapper}>
+      <CarouselComponent />
+    </View>
+    <AboutScreen />
+  </ScrollView>
+);
 
 const HomeScreen = () => {
   return (
-    <View style={styles.container}>
-      <View style={styles.carouselWrapper}>
-        <CarouselComponent />
-      </View>
-      <AboutScreen/>
-    </View>
+    <Stack.Navigator>
+      <Stack.Screen name="Main" component={MainScreen} />
+      <Stack.Screen name="AboutDetailedScreen" component={AboutDetailedScreen} />
+    </Stack.Navigator>
   );
 };
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    alignItems: 'center',
   },
   carouselWrapper: {
-    marginTop: 20
-  },
-  title: {
-    fontSize: 24,
     marginTop: 20,
-    marginBottom: 20
   },
-  aboutSection: {
-    padding: 20,
-    alignItems: 'center',
-    width: '100%'
-  },
-  aboutTitle: {
-    fontSize: 22,
-    fontWeight: 'bold',
-    marginBottom: 10
-  },
-  aboutText: {
-    fontSize: 16,
-    textAlign: 'center',
-    paddingHorizontal: 20
-  }
 });
 
 export default HomeScreen;
