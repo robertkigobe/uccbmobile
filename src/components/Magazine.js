@@ -1,14 +1,14 @@
 import React from 'react';
-import { View, Text, FlatList, TouchableOpacity, StyleSheet } from 'react-native';
+import { View, Text, FlatList, StyleSheet } from 'react-native';
 
 const Magazine = () => {
   const documents = [
-    { id: '1', title: 'Magazine Issue 1', path: require('../../assets/documents/avemaria.pdf') },
-    { id: '2', title: 'Magazine Issue 2', path: require('../../assets/documents/avemaria2.pdf') },
-    { id: '3', title: 'Magazine Issue 3', path: require('../../assets/documents/avemaria.pdf') },
-    { id: '4', title: 'Magazine Issue 4', path: require('../../assets/documents/avemaria.pdf') },
-    { id: '5', title: 'Magazine Issue 5', path: require('../../assets/documents/avemaria2.pdf') },
-    { id: '6', title: 'Magazine Issue 6', path: require('../../assets/documents/avemaria.pdf') },
+    { id: '1', title: 'Magazine Issue 2025', url: 'https://example.com/magazine1.pdf' },
+    { id: '2', title: 'Magazine Issue 2024', url: 'https://example.com/magazine2.pdf' },
+    { id: '3', title: 'Magazine Issue 2023', url: 'https://example.com/magazine3.pdf' },
+    { id: '4', title: 'Magazine Issue 2022', url: 'https://example.com/magazine4.pdf' },
+    { id: '5', title: 'Magazine Issue 2021', url: 'https://example.com/magazine5.pdf' },
+    { id: '6', title: 'Magazine Issue 2020', url: 'https://example.com/magazine6.pdf' },
   ];
 
   return (
@@ -18,9 +18,9 @@ const Magazine = () => {
         data={documents}
         keyExtractor={(item) => item.id}
         renderItem={({ item }) => (
-          <TouchableOpacity style={styles.documentItem}>
+          <View style={styles.documentItem}>
             <Text style={styles.documentTitle}>{item.title}</Text>
-          </TouchableOpacity>
+          </View>
         )}
       />
     </View>
