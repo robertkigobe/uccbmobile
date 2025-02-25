@@ -6,26 +6,42 @@ const ViewMyTickets = () => {
     { 
       id: '1', 
       number: 'A1', 
-      event: 'UMD Concert 2024', 
-      date: 'March 15, 2024', 
-      price: '$50',
+      event: 'UMD Concert 2025', 
+      date: 'March 15, 2025', 
+      price: '$150',
       status: 'Valid'
     },
     { 
       id: '2', 
       number: 'B3', 
-      event: 'UMD Concert 2024', 
-      date: 'March 15, 2024', 
-      price: '$45',
+      event: 'UMD Concert 2025', 
+      date: 'March 15, 2025', 
+      price: '$150',
       status: 'Valid'
     },
     { 
       id: '3', 
       number: 'C2', 
-      event: 'UMD Concert 2024', 
-      date: 'March 15, 2024', 
-      price: '$40',
+      event: 'UMD Concert 2025', 
+      date: 'March 15, 2025', 
+      price: '$150',
       status: 'Used'
+    },
+    { 
+      id: '4', 
+      number: 'D8', 
+      event: 'UMD Concert 2025', 
+      date: 'March 15, 2025', 
+      price: '$150',
+      status: 'Used'
+    },
+    { 
+      id: '5', 
+      number: 'F3', 
+      event: 'UMD Concert 2025', 
+      date: 'March 15, 2025', 
+      price: '$150',
+      status: 'Valid'
     },
   ];
 
