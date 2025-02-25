@@ -3,12 +3,12 @@ import { View, Text, FlatList, TouchableOpacity, StyleSheet } from 'react-native
 
 const BuyTickets = () => {
   const availableSeats = [
-    { id: '1', section: 'VIP', number: 'A1', price: '$100', location: 'Front Row' },
-    { id: '2', section: 'VIP', number: 'A2', price: '$100', location: 'Front Row' },
-    { id: '3', section: 'Regular', number: 'B1', price: '$50', location: 'Middle' },
-    { id: '4', section: 'Regular', number: 'B2', price: '$50', location: 'Middle' },
-    { id: '5', section: 'Economy', number: 'C1', price: '$30', location: 'Back' },
-    { id: '6', section: 'Economy', number: 'C2', price: '$30', location: 'Back' },
+    { id: '1', section: 'Table 1', number: 'A1', price: '$150', location: 'Front Row' },
+    { id: '2', section: 'Table 3', number: 'A2', price: '$150', location: 'Front Row' },
+    { id: '3', section: 'Table 5', number: 'B1', price: '$150', location: 'Middle' },
+    { id: '4', section: 'Table 8', number: 'B2', price: '$150', location: 'Middle' },
+    { id: '5', section: 'Table 23', number: 'C1', price: '$150', location: 'Back' },
+    { id: '6', section: 'Table 34', number: 'C2', price: '$150', location: 'Back' },
   ];
 
   const renderSeat = ({ item }) => (
